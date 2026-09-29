@@ -63,14 +63,14 @@ let activeOscillators = [];
 
 
 /*
- * Convert text into the sequence of barcode elements.
- *
- * Each returned item is:
- *
- * {
- *     bar: true/false,
- *     width: "n" or "w"
- * }
+  Convert text into the sequence of barcode elements.
+ 
+  Each returned item is:
+ 
+  {
+      bar: true/false,
+      width: "n" or "w"
+  }
  */
 function encodeText(text) {
 
