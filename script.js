@@ -100,9 +100,7 @@ function encodeText(text) {
 }
 
 
-/*
- * Convert a Code 39 character pattern to alternating bars and spaces.
- */
+// Convert a Code 39 character pattern to alternating bars and spaces.
 function addCharacter(elements, pattern) {
 
     for (let i = 0; i < pattern.length; i++) {
@@ -127,9 +125,8 @@ function addCharacter(elements, pattern) {
 }
 
 
-/*
- * Display barcode on the screen.
- */
+
+//Display barcode on the screen.
 function generateBarcode() {
 
     const input = document.getElementById("inputText");
@@ -168,9 +165,8 @@ function generateBarcode() {
 }
 
 
-/* Play the barcode as audio. Black lines produce tone. 
-White spaces produce silence.
- */
+//Play the barcode as audio. Black lines produce tone. White spaces produce silence.
+
 async function playBarcode() {
 
     stopBarcode();
@@ -215,9 +211,8 @@ async function playBarcode() {
 
         if (element.bar) {
 
-            /*
-             * Oscillator for this individual bar.
-             */
+            
+             // Oscillator for this individual bar.
             const oscillator =
                 audioContext.createOscillator();
 
@@ -229,9 +224,8 @@ async function playBarcode() {
             oscillator.frequency.value =
                 TONE_FREQUENCY;
 
-            /*
-             * Fade in/out prevents clicking.
-             */
+            
+             //Fade in/out prevents clicking.
             gain.gain.setValueAtTime(
                 0,
                 currentTime
@@ -263,9 +257,8 @@ async function playBarcode() {
             barNumber++;
         }
 
-        /*
-          Whether bar or space, advance in time.
-         */
+        
+        // Whether bar or space, advance in time.
         currentTime += duration;
     }
 
